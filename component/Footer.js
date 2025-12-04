@@ -167,7 +167,7 @@ function Footer() {
               </li>
               <li className="flex gap-3 items-start">
                 <Mail size={18} className="text-yellow-400 shrink-0 mt-1" />
-                <span className="text-gray-400">tomas.turecek@ncecctrade.com</span>
+                <span className="text-gray-400">info@westbridgelegaltrade.com.ng</span>
               </li>
               <li className="flex gap-3 items-start">
                 <MapPin size={18} className="text-yellow-400 shrink-0 mt-1" />

@@ -34,8 +34,7 @@ function ContactUsSection() {
               <Phone className="text-[#181e29]" size={28} />
             </div>
             <h3 className="font-bold text-white text-xl mb-2">Phone</h3>
-            <p className="text-gray-300 font-medium mb-1">+234 807 074 2746
-</p>
+            <p className="text-gray-300 font-medium mb-1">+1 (555) 123-4567</p>
             <p className="text-gray-400 text-sm flex items-center gap-2">
               <Clock size={16} /> Mon-Fri 9AM-6PM EST
             </p>
@@ -45,8 +44,7 @@ function ContactUsSection() {
               <Mail className="text-[#181e29]" size={28} />
             </div>
             <h3 className="font-bold text-white text-xl mb-2">Email</h3>
-            <p className="text-gray-300 font-medium mb-1">tomas.turecek@ncecctrade.com
-</p>
+            <p className="text-gray-300 font-medium mb-1">info@westbridge.com</p>
             <p className="text-gray-400 text-sm flex items-center gap-2">
               <MessageSquare size={16} /> Response within 24 hours
             </p>
@@ -56,9 +54,8 @@ function ContactUsSection() {
               <MapPin className="text-[#181e29]" size={28} />
             </div>
             <h3 className="font-bold text-white text-xl mb-2">Address</h3>
-            <p className="text-gray-300 font-medium mb-1">No 1, Adebayo Doherty Road,
-</p>
-            <p className="text-gray-400 text-sm">Lekki-Phase 1, Lagos</p>
+            <p className="text-gray-300 font-medium mb-1">123 Legal Street</p>
+            <p className="text-gray-400 text-sm">New York, NY 10001</p>
           </motion.div>
         </div>
         {/* Contact Form & Testimonial */}

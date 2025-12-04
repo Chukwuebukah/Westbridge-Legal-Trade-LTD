@@ -27,7 +27,7 @@ function Navbar() {
             <Phone size={18} /> <span>+2348070742746</span>
           </div>
           <div className="flex items-center gap-2 text-yellow-400 font-medium">
-            <Mail size={18} /> <span>tomas.turecek@ncecctrade.com</span>
+            <Mail size={18} /> <span>info@westbridgelegaltrade.com.ng</span>
           </div>
         </div>
 

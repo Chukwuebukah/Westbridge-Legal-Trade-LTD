@@ -137,7 +137,7 @@ function ServicesSection() {
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-yellow-400 transition font-serif">{service.title}</h3>
                 <div className="mb-6">{service.description}</div>
-                <button className="bg-yellow-400 text-[#181e29] font-bold py-2 px-6 rounded transition text-sm shadow group-hover:bg-yellow-500">View More</button>
+               
               </div>
             );
           })}
