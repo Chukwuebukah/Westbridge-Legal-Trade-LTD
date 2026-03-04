@@ -1,15 +1,17 @@
 import Image from "next/image";
 import { Award, Users, Briefcase, CheckCircle } from 'lucide-react';
 
-function AboutUsSection() {
+function AboutUsSection({ imageSrc, imageAlt = 'About us image' }) {
 
   const features = [
-    { icon: CheckCircle, title: 'We design the optimal legal structure', desc: 'We assess your goals and build the safest possible legal framework.' },
-    { icon: Award, title: 'Incorporate a company or set up a branch', desc: 'Complete guidance on company formation and regulatory compliance.' },
-    { icon: Users, title: 'Handle registrations with authorities & regulators', desc: 'We interface with Nigerian institutions so you don’t have to.' },
-    { icon: Briefcase, title: 'Draft and review all key contracts', desc: 'Ensure your agreements protect your interests at every step.' },
-    { icon: Briefcase, title: 'Provide ongoing legal advice and compliance support', desc: 'Long-term partnership to keep your business safe and compliant.' }
+    { icon: CheckCircle, title: 'We design the optimal legal structure', desc: 'We analyse your objectives, risk profile and counterparties, then propose and implement the safest and most efficient legal setup for your project.' },
+    { icon: Award, title: 'We incorporate your company or establish your branch', desc: 'From choosing the right vehicle to complete incorporation and post-incorporation filings, we manage the entire process so you can focus on the business itself.' },
+    { icon: Users, title: 'We handle registrations with authorities and regulators', desc: 'We deal directly with Nigerian ministries, agencies and regulators on your behalf, ensuring that licences, registrations and approvals are obtained correctly and on time.' },
+    { icon: Briefcase, title: 'We draft and review all key contracts', desc: 'Shareholders’ agreements, joint-venture arrangements, distribution and service contracts – we prepare and negotiate documentation that protects your position and is enforceable in practice.' },
+    { icon: Briefcase, title: 'We provide ongoing legal and compliance support', desc: 'Through long-term advisory mandates, we monitor legal and regulatory changes, keep your structure and documentation up to date, and act as your external in-house legal department in Nigeria.' }
   ];
+
+  const hasImage = Boolean(imageSrc);
 
   return (
     <section id="aboutus" className="py-24 px-6 bg-[#181e29] border-t border-[#232a3b]">
@@ -31,20 +33,17 @@ function AboutUsSection() {
         </div>
 
         {/* Main Content */}
-        <div className="grid md:grid-cols-2 gap-14 items-center">
-
-          {/* Image */}
-          <div className="relative w-full">
-            <div className="absolute inset-0 bg-gradient-to-br from-yellow-400 to-yellow-700 rounded-3xl blur-2xl opacity-20"></div>
-
-            <Image
-              src="/lawyers.jpg"
-              alt="Legal professionals at work"
-              width={500}
-              height={500}
-              className="rounded-3xl shadow-2xl w-full h-auto relative z-10"
-            />
-          </div>
+        <div className={`grid gap-14 items-center ${hasImage ? 'md:grid-cols-2' : 'md:grid-cols-1'}`}>
+          {hasImage && (
+            <div className="relative w-full h-64 md:h-auto">
+              <Image
+                src={imageSrc}
+                alt={imageAlt}
+                fill
+                className="object-cover rounded-lg"
+              />
+            </div>
+          )}
 
           {/* Text & Features */}
           <div>
@@ -53,12 +52,15 @@ function AboutUsSection() {
             </h3>
 
             <p className="text-gray-300 mb-6 text-lg leading-relaxed">
-              WESTBRIDGE LEGAL & TRADE LTD is a Nigeria-based law firm bridging European legal standards with the realities of West African markets. 
-              We operate at the intersection of business, law, and cross-border commerce to help companies thrive in emerging markets.
+            WESTBRIDGE LEGAL & TRADE LTD is a Nigeria-based law firm led by Oxford-educated European lawyers with long-term experience in West Africa. We combine in-depth knowledge of Nigerian law with a solid background in common-law and continental legal systems. This allows us to apply European-level legal standards to the realities of West African markets – reliably, commercially and without illusions.
             </p>
 
             <p className="text-gray-300 mb-8 text-lg leading-relaxed">
-              Whether you are an investor, an SME, or a multinational corporation, we provide tailored legal and regulatory solutions to support sustainable business growth in Nigeria and West Africa.
+          We work at the intersection of law, trade and cross-border transactions. Whether you are an investor, an SME or a multinational corporation, we provide precise, business-oriented legal and regulatory support to secure and grow your operations in Nigeria and across West Africa.
+            </p>
+
+            <p className="text-gray-300 mb-8 text-lg leading-relaxed">
+              How We Support Your Business
             </p>
 
             {/* Features List */}
@@ -86,5 +88,4 @@ function AboutUsSection() {
     </section>
   );
 }
-
 export default AboutUsSection;
