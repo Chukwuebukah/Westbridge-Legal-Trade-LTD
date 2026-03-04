@@ -1,8 +1,40 @@
 'use client';
+import { useState } from 'react';
 import { Phone, Mail, MapPin, ArrowRight, Clock, MessageSquare, Landmark, Gavel, Scale } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 function ContactUsSection() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    const subject = formData.subject || `Message from ${formData.name}`;
+    const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
+    const mailtoLink = `mailto:info@westbridgelegaltrade.com.ng?subject=${encodeURIComponent(subject)}&body=${body}`;
+    
+    window.location.href = mailtoLink;
+    
+    setFormData({
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    });
+  };
+
   return (
     <section id="contact" className="py-20 px-6 bg-[#181e29] border-t border-[#232a3b] relative overflow-hidden">
       {/* Animated Law Icons */}
@@ -63,29 +95,61 @@ function ContactUsSection() {
         <div className="grid md:grid-cols-3 gap-8 items-start">
           <motion.div initial={{ x: -40, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.8, duration: 0.7, type: 'spring' }} className="md:col-span-2">
             <div className="max-w-2xl mx-auto bg-[#232a3b] p-8 rounded-2xl border border-[#232a3b]">
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-gray-300 mb-2 font-medium">Name</label>
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="Your Name"
+                      required
+                      className="w-full px-6 py-3 bg-[#181e29] border border-gray-700 rounded-xl focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-100 transition text-white placeholder-gray-400"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-gray-300 mb-2 font-medium">Email</label>
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="Your Email"
+                      required
+                      className="w-full px-6 py-3 bg-[#181e29] border border-gray-700 rounded-xl focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-100 transition text-white placeholder-gray-400"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-gray-300 mb-2 font-medium">Subject</label>
                   <input
                     type="text"
-                    placeholder="Your Name"
-                    className="w-full px-6 py-3 bg-[#181e29] border border-gray-700 rounded-xl focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-100 transition text-white placeholder-gray-400"
-                  />
-                  <input
-                    type="email"
-                    placeholder="Your Email"
+                    name="subject"
+                    id="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    placeholder="Subject"
+                    required
                     className="w-full px-6 py-3 bg-[#181e29] border border-gray-700 rounded-xl focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-100 transition text-white placeholder-gray-400"
                   />
                 </div>
-                <input
-                  type="text"
-                  placeholder="Subject"
-                  className="w-full px-6 py-3 bg-[#181e29] border border-gray-700 rounded-xl focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-100 transition text-white placeholder-gray-400"
-                />
-                <textarea
-                  placeholder="Your Message"
-                  rows="5"
-                  className="w-full px-6 py-3 bg-[#181e29] border border-gray-700 rounded-xl focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-100 transition resize-none text-white placeholder-gray-400"
-                ></textarea>
+                <div>
+                  <label className="block text-gray-300 mb-2 font-medium">Message</label>
+                  <textarea
+                    name="message"
+                    id="message"
+                    rows="5"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Your Message"
+                    required
+                    className="w-full px-6 py-3 bg-[#181e29] border border-gray-700 rounded-xl focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-100 transition resize-none text-white placeholder-gray-400"
+                  ></textarea>
+                </div>
                 <motion.button
                   whileHover={{ scale: 1.05, backgroundColor: '#facc15', color: '#181e29' }}
                   type="submit"
