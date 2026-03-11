@@ -161,10 +161,7 @@ function Footer() {
               CONTACT INFO
             </h4>
             <ul className="space-y-3">
-              <li className="flex gap-3 items-start">
-                <Phone size={18} className="text-yellow-400 shrink-0 mt-1" />
-                <span className="text-gray-400">+234 807 074 2746</span>
-              </li>
+              
               <li className="flex gap-3 items-start">
                 <Mail size={18} className="text-yellow-400 shrink-0 mt-1" />
                 <span className="text-gray-400">info@westbridgelegaltrade.com.ng</span>
@@ -185,7 +182,7 @@ function Footer() {
         {/* Bottom */}
         <div className="flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
           <p>
-            &copy; {new Date().getFullYear()} Attorneyster. All rights reserved.
+            &copy; {new Date().getFullYear()} Westbridge Legal & Trade LTD. All rights reserved.
           </p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <a href="#" className="hover:text-yellow-400 transition">

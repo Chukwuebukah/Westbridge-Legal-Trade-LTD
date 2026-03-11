@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { Phone, Mail, MapPin, ArrowRight, Clock, MessageSquare, Landmark, Gavel, Scale } from 'lucide-react';
+import { Mail, MapPin, ArrowRight, Clock, MessageSquare, Landmark, Gavel, Scale } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 function ContactUsSection() {
@@ -56,19 +56,19 @@ function ContactUsSection() {
             Contact Our Legal Team
           </motion.h2>
           <motion.p initial={{ y: 40, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.4, duration: 0.8, type: 'spring' }} className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Have questions? We're here to help. Reach out to us today for a free consultation.
+            Have questions? We're here to help. Reach out to us today for initial consultation.
           </motion.p>
         </div>
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           {/* Contact Info Cards */}
           <motion.div initial={{ y: 40, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.5, duration: 0.7, type: 'spring' }} className="bg-[#232a3b] p-8 rounded-2xl border border-[#232a3b] hover:border-yellow-400 hover:shadow-xl transition-shadow">
             <div className="w-14 h-14 bg-yellow-400 rounded-xl flex items-center justify-center mb-4">
-              <Phone className="text-[#181e29]" size={28} />
+              <Clock className="text-[#181e29]" size={28} />
             </div>
-            <h3 className="font-bold text-white text-xl mb-2">Phone</h3>
-            <p className="text-gray-300 font-medium mb-1">+234 807 074 2746</p>
-            <p className="text-gray-400 text-sm flex items-center gap-2">
-              <Clock size={16} /> Mon-Fri 9AM-6PM EST
+            <h3 className="font-bold text-white text-xl mb-2">Office Hours</h3>
+            <p className="text-gray-300 font-medium mb-1">Mon-Fri 9AM-6PM</p>
+            <p className="text-gray-400 text-sm">
+              Available for consultations
             </p>
           </motion.div>
           <motion.div initial={{ y: 40, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.6, duration: 0.7, type: 'spring' }} className="bg-[#232a3b] p-8 rounded-2xl border border-[#232a3b] hover:border-yellow-400 hover:shadow-xl transition-shadow">
@@ -86,8 +86,7 @@ function ContactUsSection() {
               <MapPin className="text-[#181e29]" size={28} />
             </div>
             <h3 className="font-bold text-white text-xl mb-2">Address</h3>
-            <p className="text-gray-300 font-medium mb-1">                No 1, Adebayo Doherty Road, 
-</p>
+            <p className="text-gray-300 font-medium mb-1">No 1, Adebayo Doherty Road,</p>
             <p className="text-gray-400 text-sm">Lekki-Phase 1, Lagos</p>
           </motion.div>
         </div>
@@ -161,23 +160,7 @@ function ContactUsSection() {
               </form>
             </div>
           </motion.div>
-          {/* Testimonial Card */}
-          <motion.div initial={{ x: 40, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.9, duration: 0.7, type: 'spring' }} className="bg-[#232a3b] border border-yellow-400 rounded-2xl p-8 shadow-lg">
-            <div className="flex items-center gap-4 mb-4">
-              <Scale className="text-yellow-400" size={32} />
-              <div>
-                <p className="font-bold text-white">Client Testimonial</p>
-                <p className="text-xs text-yellow-400">Verified Client</p>
-              </div>
-            </div>
-            <p className="text-gray-300 italic mb-4">
-              "WestBridge Law Firm handled my case with professionalism and care. I felt supported every step of the way and got the results I needed!"
-            </p>
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-yellow-200 flex items-center justify-center font-bold text-yellow-700">A</div>
-              <span className="text-sm text-white font-medium">A. Smith</span>
-            </div>
-          </motion.div>
+        
         </div>
       </div>
     </section>

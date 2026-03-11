@@ -31,9 +31,6 @@ export default function Navbar() {
         {/* contact info (desktop) */}
         <div className="hidden lg:flex items-center gap-8">
           <div className="flex items-center gap-2 text-yellow-400 font-medium">
-            <Phone size={18} /> <span>+2348070742746</span>
-          </div>
-          <div className="flex items-center gap-2 text-yellow-400 font-medium">
             <Mail size={18} />{' '}
             <span>info@westbridgelegaltrade.com.ng</span>
           </div>

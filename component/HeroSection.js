@@ -37,7 +37,7 @@ function HeroSection() {
             className="bg-yellow-400 text-[#181e29] font-bold py-3 px-8 rounded transition text-lg shadow-lg cursor-pointer"
             href="#contact"
           >
-            Get In Touch
+            Book a Consultation
           </motion.a>
         </div>
 
